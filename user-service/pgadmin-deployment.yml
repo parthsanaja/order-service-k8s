@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pgadmin
+  name: pgadmin-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
+  selector:
+    app: pgadmin
+#  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+  labels:
+    app: pgadmin
+spec:
+  selector:
+    matchLabels:
+      app: pgadmin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+      name: pgadmin-service
+    spec:
+      containers:
+        - image: dpage/pgadmin4
+          name: pgadmin
+          env:
+              - name: "PGADMIN_DEFAULT_EMAIL"
+                value: "parth.sanaja@gmail.com"
+              - name: "PGADMIN_DEFAULT_PASSWORD"
+                value: "pgadmin"
+          ports:
+            - containerPort: 80

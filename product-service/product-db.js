@@ -1,3 +1,4 @@
+//convert to curl(s)
 use product-service;
 db.product.insert({
     "_id" : ObjectId("649e5260050438228ef6f08a"),
