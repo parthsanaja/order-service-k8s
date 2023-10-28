@@ -1,0 +1,21 @@
+curl --location 'http://127.0.0.1:57703/user' \
+--header 'Content-Type: application/json' \
+--data '{
+"name":"Parth Sanaja",
+"balance" : 10000.0
+}'
+
+
+curl --location 'http://127.0.0.1:57703/user' \
+--header 'Content-Type: application/json' \
+--data '{
+"name":"Aarav Parth Sanaja",
+"balance" : 95000.0
+}'
+
+curl --location 'http://127.0.0.1:57703/user' \
+--header 'Content-Type: application/json' \
+--data '{
+"name":"Meghal Desai",
+"balance" : 25000.0
+}'

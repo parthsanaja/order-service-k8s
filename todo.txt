@@ -1,0 +1,2 @@
+pass db urls, and other service details via deployment files.
+use configMap
