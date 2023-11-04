@@ -6,7 +6,7 @@ metadata:
   name: productdb-service
 spec:
   ports:
-    - port: 26017
+    - port: 27017
       targetPort: 27017
   type: LoadBalancer
   selector:

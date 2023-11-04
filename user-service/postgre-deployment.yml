@@ -35,9 +35,15 @@ spec:
           name: userdb
           env:
             - name: "POSTGRES_USER"
-              value: "admin"
+              valueFrom:
+                configMapKeyRef:
+                  key: "PG_DB_USERNAME"
+                  name: "user-service-config1"
             - name: "POSTGRES_PASSWORD"
-              value: "admin"
+              valueFrom:
+                configMapKeyRef:
+                  key: "PG_DB_PASSWORD"
+                  name: "user-service-config1"
             - name: "POSTGRES_DB"
               value: "userdb"
           ports:

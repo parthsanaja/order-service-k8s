@@ -34,9 +34,15 @@ spec:
         - image: dpage/pgadmin4
           name: pgadmin
           env:
-              - name: "PGADMIN_DEFAULT_EMAIL"
-                value: "parth.sanaja@gmail.com"
               - name: "PGADMIN_DEFAULT_PASSWORD"
-                value: "pgadmin"
+                valueFrom:
+                  configMapKeyRef:
+                    key: "PGADMIN_PASSWORD"
+                    name: "user-service-config1"
+              - name: "PGADMIN_DEFAULT_EMAIL"
+                valueFrom:
+                  configMapKeyRef:
+                    key: "PGADMIN_USERNAME"
+                    name: "user-service-config1"
           ports:
             - containerPort: 80

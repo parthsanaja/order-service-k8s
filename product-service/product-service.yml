@@ -31,7 +31,10 @@ spec:
       name: product-service-v2
     spec:
       containers:
-        - image: parthsanaja/product-service-v2:1
+        - image: parthsanaja/product-service-v2:3
           name: product-service-v2
           ports:
             - containerPort: 8091
+          envFrom:
+            - configMapRef:
+                name: "product-service-config"

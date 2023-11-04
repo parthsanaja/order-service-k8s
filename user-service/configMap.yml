@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-service-config1
+  namespace: default
+data:
+  PG_DB_HOST: "userdb-service"
+  PG_DB_PORT: "5432"
+  PG_DB_USERNAME: "admin"
+  PG_DB_PASSWORD: "admin2"
+  PGADMIN_USERNAME: "parth.sanaja@gmail.com"
+  PGADMIN_PASSWORD: "pgadmin2"

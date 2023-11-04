@@ -31,7 +31,10 @@ spec:
       name: user-service-v2
     spec:
       containers:
-        - image: parthsanaja/user-service-v2:2
+        - image: parthsanaja/user-service-v2:3
           name: user-service-v2
           ports:
             - containerPort: 8092
+          envFrom:
+            - configMapRef:
+                name: user-service-config1

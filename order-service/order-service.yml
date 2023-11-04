@@ -31,7 +31,10 @@ spec:
       name: order-service-v2
     spec:
       containers:
-        - image: parthsanaja/order-service:3
+        - image: parthsanaja/order-service:4
           name: order-service-v2
           ports:
             - containerPort: 8090
+          envFrom:
+            - configMapRef:
+                name: "order-service-config1"
