@@ -1,0 +1,6 @@
+some commands
+kubectl apply -f <directory-name>
+kubectl apply -f file1 -f file2
+kubectl get pods
+kubectl logs -f <pod-name>
+kubectl delete pod <pod-name>
